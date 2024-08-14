@@ -79,6 +79,9 @@ items:
           name: {{ $vmr.os }}
           namespace: openshift-virtualization-os-images
         pvc:
+          metadata:
+            labels:
+              vm.kubevirt.io/name: {{ $identifier }}
           accessModes:
             - {{ coalesce $vmr.accessMode $.Values.defaultAccessMode "ReadWriteOnce" }}
           resources:
