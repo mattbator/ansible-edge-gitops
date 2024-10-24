@@ -13,7 +13,7 @@
     machineset_name: metal-worker
     machineset_node_labels:
       node-role.kubernetes.io/worker: ""
-    machineset_replicas: 1
+    machineset_replicas: 2
     machineset_user_data_secret: worker-user-data
     machineset_user_data_namespace: openshift-machine-api
   tasks:

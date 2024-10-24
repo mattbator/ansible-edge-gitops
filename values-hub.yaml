@@ -10,7 +10,6 @@ clusterGroup:
     - openshift-cnv
     - openshift-storage
     - edge-gitops-vms
-    - kasten-io
 
   subscriptions:
     aap-operator:
@@ -25,12 +24,6 @@ clusterGroup:
     openshift-data-foundation:
       name: odf-operator
       namespace: openshift-storage
-
-    kasten-operator:
-      name: k10-kasten-operator-rhmp
-      namespace: kasten-io
-      channel: stable
-      source: redhat-marketplace
 
   projects:
     - hub
@@ -115,12 +108,6 @@ clusterGroup:
       extraValueFiles:
         - '$patternref/overrides/values-egv-vms.yaml'
         - '$patternref/overrides/values-egv-{{ $.Values.global.clusterVersion }}.yaml'
-
-    veeam-kasten:
-      name: veeam-kasten
-      namespace: kasten-io
-      project: hub
-      path: charts/hub/veeam-kasten
 
   # Only the hub cluster here - managed entities are edge nodes
   managedClusterGroups: []
