@@ -1,0 +1,16 @@
+apiVersion: apik10.kasten.io/v1alpha1
+kind: K10
+metadata:
+  annotations:
+    helm.sdk.operatorframework.io/rollback-force: 'false'
+  name: k10
+  namespace: kasten-io
+spec:
+  auth:
+    tokenAuth:
+      enabled: true
+  route:
+    enabled: true
+    host: ''
+    tls:
+      enabled: false
